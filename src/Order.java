@@ -44,47 +44,49 @@ public class Order {
                 System.out.println("\n");
             }
 
+            boolean ordering = true;
+            while ( ordering ) {
+                System.out.println("What would you like to order? Please use the number associated with each item to order.");
+                int orderChoice = input.nextInt();
+                input.nextLine();
+
+                if (orderChoice == 1) {
+                    order.add(cupcakeMenu.get(0));
+                    System.out.println("Item added to order");
+                } else if (orderChoice == 2) {
+                    order.add(cupcakeMenu.get(1));
+                    System.out.println("Item added to order");
+                } else if (orderChoice == 3) {
+                    order.add(cupcakeMenu.get(2));
+                    System.out.println("Item added to order");
+                } else if (orderChoice == 4) {
+                    order.add(cupcakeMenu.get(3));
+                    System.out.println("Item added to order");
+                } else if (orderChoice == 5) {
+                    order.add(cupcakeMenu.get(4));
+                    System.out.println("Item added to order");
+                } else if (orderChoice == 6) {
+                    order.add(cupcakeMenu.get(5));
+                    System.out.println("Item added to order");
+                } else {
+                    System.out.println("Sorry, we don’t seem to have that on the menu.");
+                }
+
+                System.out.println("Would you like to continue ordering? (Y/N)");
+                placeOrder = input.nextLine();
+
+                if (!placeOrder.equalsIgnoreCase("Y")){
+                    ordering = false;
+                }
+
+            }
+
         }
         else {
             System.out.println("Have a nice day then");
         }
 
-        boolean ordering = true;
-        while ( ordering ) {
-            System.out.println("What would you like to order? Please use the number associated with each item to order.");
-            int orderChoice = input.nextInt();
-            input.nextLine();
 
-            if (orderChoice == 1) {
-                order.add(cupcakeMenu.get(0));
-                System.out.println("Item added to order");
-            } else if (orderChoice == 2) {
-                order.add(cupcakeMenu.get(1));
-                System.out.println("Item added to order");
-            } else if (orderChoice == 3) {
-                order.add(cupcakeMenu.get(2));
-                System.out.println("Item added to order");
-            } else if (orderChoice == 4) {
-                order.add(cupcakeMenu.get(3));
-                System.out.println("Item added to order");
-            } else if (orderChoice == 5) {
-                order.add(cupcakeMenu.get(4));
-                System.out.println("Item added to order");
-            } else if (orderChoice == 6) {
-                order.add(cupcakeMenu.get(5));
-                System.out.println("Item added to order");
-            } else {
-                System.out.println("Sorry, we don’t seem to have that on the menu.");
-            }
-
-            System.out.println("Would you like to continue ordering? (Y/N)");
-            placeOrder = input.nextLine();
-
-            if (!placeOrder.equalsIgnoreCase("Y")){
-                ordering = false;
-            }
-
-        }
 
         System.out.println(order.get(0));
         System.out.println(order.get(1));
@@ -98,13 +100,13 @@ public class Order {
                 }
             }
 
-            for (int k = 0; k < drinkMenu.size(); k++) {
-                if (order.get(i).equals(drinkMenu.get(k))) {
-                    drinkMenu.get(k).type();
-                    System.out.println("Cupcake Price: " + drinkMenu.get(k).getPrice());
-                    subtotal = subtotal + drinkMenu.get(k).getPrice();
-                }
-            }
+//            for (int k = 0; k < drinkMenu.size(); k++) {
+//                if (order.get(i).equals(drinkMenu.get(k))) {
+//                    drinkMenu.get(k).type();
+//                    System.out.println("Drink Price: " + drinkMenu.get(k).getPrice());
+//                    subtotal = subtotal + drinkMenu.get(k).getPrice();
+//                }
+//            }
         }
 
         System.out.println("Subtotal: " + subtotal);
