@@ -86,8 +86,6 @@ public class Order {
             System.out.println("Have a nice day then");
         }
 
-
-
         System.out.println(order.get(0));
         System.out.println(order.get(1));
         double subtotal = 0.0;
@@ -100,13 +98,13 @@ public class Order {
                 }
             }
 
-//            for (int k = 0; k < drinkMenu.size(); k++) {
-//                if (order.get(i).equals(drinkMenu.get(k))) {
-//                    drinkMenu.get(k).type();
-//                    System.out.println("Drink Price: " + drinkMenu.get(k).getPrice());
-//                    subtotal = subtotal + drinkMenu.get(k).getPrice();
-//                }
-//            }
+            for (int k = 0; k < drinkMenu.size(); k++) {
+                if (order.get(i).equals(drinkMenu.get(k))) {
+                    drinkMenu.get(k).type();
+                    System.out.println("Drink Price: " + drinkMenu.get(k).getPrice());
+                    subtotal = subtotal + drinkMenu.get(k).getPrice();
+                }
+            }
         }
 
         System.out.println("Subtotal: " + subtotal);
